@@ -1,0 +1,19 @@
+.appBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    border: 2px solid black;
+    font-family: sans-serif;
+  }
+
+  .link{
+    color: black;
+    font-size: medium;
+  }
+
+  .homepage_link{
+    color: black;
+    font-size: large;
+    text-decoration: none;
+  }
