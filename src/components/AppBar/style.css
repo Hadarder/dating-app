@@ -4,7 +4,8 @@
     align-items: center;
     height: 50px;
     border: 2px solid black;
-    font-family: sans-serif;
+    font-family: Optima, sans-serif;
+    font-weight: bold;
   }
 
   .link{
