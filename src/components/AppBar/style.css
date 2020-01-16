@@ -1,11 +1,15 @@
 .appBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 50px;
   border: 2px solid black;
-  font-family: Optima, sans-serif;
   font-weight: bold;
+  font-family: Optima, sans-serif;
 }
 
 .link{
