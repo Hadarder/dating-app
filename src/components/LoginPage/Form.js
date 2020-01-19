@@ -11,6 +11,8 @@ export function Form({ buttonTitle, onSubmit }) {
     <form
       onSubmit={e => {
         e.preventDefault();
+        setUsername("");
+        setPassword("");
         onSubmit(userName, password);
       }}
     >
@@ -31,7 +33,9 @@ export function Form({ buttonTitle, onSubmit }) {
           value={password}
         />
       </div>
-      <button className="button" disabled={isValid}>{buttonTitle}</button>
+      <button className="button" disabled={isValid}>
+        {buttonTitle}
+      </button>
     </form>
   );
 }
