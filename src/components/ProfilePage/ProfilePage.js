@@ -3,10 +3,12 @@ import { useSelector } from "react-redux";
 import { useAction } from "../../redux/useAction";
 import { userActions } from "../../redux/user";
 import { updateUserProfile } from "../../data/dataManager";
+import {useHistory} from 'react-router-dom'
 import "./profilepage.css";
 
 export function ProfilePage() {
 
+  const history = useHistory();
   const user = useSelector(({ user }) => user);
   const [name, setName] = useState(user.name);
   const [age, setAge] = useState(user.age);
@@ -18,13 +20,14 @@ export function ProfilePage() {
   async function onSubmit() {
     const updatedUser = await updateUserProfile(
       user.username,
-      user.password,
       name,
       age,
       gender,
       lookingFor
     );
     saveUser(updatedUser);
+    alert('changes saved succesfully :)');
+    history.push('/');
   }
 
   return (

@@ -61,15 +61,17 @@ export async function getLoggedUserData(username, password) {
 
 export async function updateUserProfile(
   username,
-  password,
   name,
   age,
   gender,
   lookingFor
 ) {
   const users = await getUsersFromServer();
-  const newUser = createUser(username, password, name, age, gender, lookingFor);
-  users.push(newUser);
+  const user = getUserByUserName(users, username);
+  user.name = name;
+  user.age = age;
+  user.gender = gender;
+  user.lookingFor = lookingFor;
   await setUsers({ users });
-  return newUser;
+  return user;
 }
