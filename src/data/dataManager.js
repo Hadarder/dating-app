@@ -58,3 +58,20 @@ export async function getLoggedUserData(username, password) {
   response = user && isCorrectPassword(user, password) ? user : null;
   return response;
 }
+
+export async function updateUserProfile(
+  username,
+  name,
+  age,
+  gender,
+  lookingFor
+) {
+  const users = await getUsersFromServer();
+  const user = getUserByUserName(users, username);
+  user.name = name;
+  user.age = age;
+  user.gender = gender;
+  user.lookingFor = lookingFor;
+  await setUsers({ users });
+  return user;
+}

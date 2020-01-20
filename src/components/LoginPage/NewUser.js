@@ -7,7 +7,7 @@ import { userActions } from "../../redux/user";
 import { addUser } from "../../data/dataManager";
 
 export function NewUser() {
-  const registerUser = useAction(userActions.loginUser);
+  const registerUser = useAction(userActions.saveUser);
   const history = useHistory();
 
   async function onSubmit(username, password) {
@@ -21,7 +21,7 @@ export function NewUser() {
   }
 
   return (
-    <div className="form">
+    <div className="loginform">
       <h2>New User</h2>
       <Form buttonTitle="Register" onSubmit={onSubmit} />
     </div>
