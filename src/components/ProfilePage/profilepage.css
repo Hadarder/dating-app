@@ -1,0 +1,46 @@
+.profilepage {
+  padding-top: 70px;
+  display: flex;
+  justify-content: center;
+}
+
+.profileform {
+  display: flex;
+  flex-direction: column;
+  width: 370px;
+  height: 300px;
+  border: 2px solid black;
+  font-family: Optima, sans-serif;
+  align-items: flex-start;
+  border-radius: 5px;
+}
+
+.savebutton {
+  margin-top: 110px;
+  margin-left: 270px;
+  width: 80px;
+  height: 25px;
+  border-radius: 5px;
+  font-family: Optima, sans-serif;
+  font-size: medium;
+  cursor: pointer;
+}
+
+.profileinput {
+  display: flex;
+  justify-content: space-between;
+  width: 220px;
+  margin-left: 10px;
+  margin-top: 15px;
+}
+
+select {
+  margin-right: 2px;
+  width: 108px;
+  height: 17px;
+  font-family: Optima, sans-serif;
+  background: transparent;
+  border: 0;
+  outline: 1px solid #d3cccc;
+}
+

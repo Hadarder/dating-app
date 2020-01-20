@@ -7,7 +7,7 @@ import { useHistory } from "react-router-dom";
 import { getLoggedUserData } from "../../data/dataManager";
 
 export function Login() {
-  const loginUser = useAction(userActions.loginUser);
+  const loginUser = useAction(userActions.saveUser);
   const history = useHistory();
 
   async function onSubmit(username, password) {
@@ -21,7 +21,7 @@ export function Login() {
   }
 
   return (
-    <div className="form">
+    <div className="loginform">
       <h2>Login</h2>
       <Form buttonTitle="Login" onSubmit={onSubmit}></Form>
     </div>

@@ -58,3 +58,18 @@ export async function getLoggedUserData(username, password) {
   response = user && isCorrectPassword(user, password) ? user : null;
   return response;
 }
+
+export async function updateUserProfile(
+  username,
+  password,
+  name,
+  age,
+  gender,
+  lookingFor
+) {
+  const users = await getUsersFromServer();
+  const newUser = createUser(username, password, name, age, gender, lookingFor);
+  users.push(newUser);
+  await setUsers({ users });
+  return newUser;
+}

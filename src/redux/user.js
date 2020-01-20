@@ -9,14 +9,8 @@ const { reducer, actions } = createSlice({
     gender : "",
     lookingFor : ""},
   reducers: {
-    loginUser: (_, { payload }) => payload,
-    updateProfile: (user, { payload: { name, age, gender, lookingFor } }) => ({
-      ...user,
-      name,
-      age,
-      gender,
-      lookingFor
-    })}
+    saveUser: (_, { payload }) => payload,
+    }
 });
 
 export const userReducer = reducer;
