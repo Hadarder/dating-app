@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-import { HomePage } from './HomPage/Homepage'
-import {LoginPage} from './LoginPage/LoginPage'
+import { HomePage } from "./HomPage/Homepage";
+import { LoginPage } from "./LoginPage/LoginPage";
 
 export function MainView() {
   return (
@@ -10,8 +10,8 @@ export function MainView() {
         <HomePage />
       </Route>
       <Route path="/login">
-        <LoginPage/>
-        </Route>
+        <LoginPage />
+      </Route>
     </Switch>
   );
 }

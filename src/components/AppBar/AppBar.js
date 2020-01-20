@@ -21,7 +21,7 @@ function displayLoginOrLoggedUserName({ username }) {
       login
     </Link>
   ) : (
-    <Link className="link" to="/login">
+    <Link className="link" to="/profile">
       {`Hello, ${username}`}
     </Link>
   );
