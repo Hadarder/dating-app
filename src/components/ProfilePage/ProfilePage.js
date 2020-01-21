@@ -70,9 +70,9 @@ export function ProfilePage() {
             onChange={e => seLookingFor(e.target.value)}
           >
             <option></option>
-            <option>Men</option>
-            <option>Women</option>
-            <option>Men & Women</option>
+            <option>Male</option>
+            <option>Female</option>
+            <option>Male & Female</option>
           </select>
         </div>
         <button className="savebutton">Save</button>
