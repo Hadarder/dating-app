@@ -24,3 +24,26 @@
   font-size: large;
   text-decoration: none;
 }
+
+.searchandname{
+  display: flex;
+  justify-content: space-between;
+  width: 200px;
+}
+
+.search{
+  font-family: Optima, sans-serif;
+  margin-right: 10px;
+}
+
+.logoandname{
+  display: flex;
+  width: 150px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo{
+  height: 50px;
+  width: 50px;
+}

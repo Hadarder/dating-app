@@ -15,6 +15,7 @@
   border: 2px solid black;
   font-family: Optima, sans-serif;
   border-radius: 5px;
+  justify-content: center;
 }
 
 .like {
@@ -63,10 +64,6 @@
   border-bottom: 25px solid transparent;
   border-right: 25px solid black;
   cursor: pointer;
-}
-
-.age {
-  margin-left: 55px;
 }
 
 .heart {

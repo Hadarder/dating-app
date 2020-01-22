@@ -1,6 +1,6 @@
 import React from "react";
 import {Card} from './Card';
-import './style.css';
+import './card.css';
 
 export function UsersCards({ users, title }) {
   return (

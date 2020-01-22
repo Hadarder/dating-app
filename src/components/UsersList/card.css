@@ -15,3 +15,10 @@
     margin-top: 25px;
     font-size: small;
 }
+
+.userscards{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }

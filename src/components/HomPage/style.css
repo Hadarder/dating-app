@@ -12,10 +12,3 @@
   width: 500px;
   justify-content: space-between;
 }
-
-.userscards{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-}
