@@ -74,3 +74,8 @@ export async function getUserByName(name) {
   const fakeUsers = await getFakeUsersFromServer();
   return fakeUsers.find(user => user.firstName === name);
 }
+
+export async function getSearchResults (name){
+  const fakeUsers = await getFakeUsersFromServer();
+  return fakeUsers.filter(user => user.firstName.startsWith(name));
+}

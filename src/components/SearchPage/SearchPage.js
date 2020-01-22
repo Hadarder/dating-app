@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { UsersCards } from "../UsersList/UsersCards";
-import { getUserByName } from "../../data/mockData";
+import { getSearchResults } from "../../data/mockData";
 import "./searchpage.css";
 
 export function SearchPage() {
   const { name } = useParams();
-  const [users, setUsers] = useState("");
+  const [users, setUsers] = useState([]);
 
   useEffect(() => {
     async function fetchUsers() {
-      setUsers(await getUserByName(name));
+      setUsers(await getSearchResults(name));
     }
     fetchUsers();
   }, [name]);
@@ -19,7 +19,7 @@ export function SearchPage() {
 
   function disiplayResultsOrNotFound() {
     return users ? (
-      <UsersCards title={"Search results:"} users={[users]} />
+      <UsersCards title={"Search results:"} users={users} />
     ) : (
       <h2>No results found :(</h2>
     );
