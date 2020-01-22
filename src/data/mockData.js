@@ -13,7 +13,7 @@ const men = Ape({
     date: date()
       .random()
       .startYearsAgo(5)
-  }).repeat(10)
+  }).repeat(25)
 });
 
 const women = Ape({
@@ -27,7 +27,7 @@ const women = Ape({
     date: date()
       .random()
       .startYearsAgo(5)
-  }).repeat(10)
+  }).repeat(25)
 });
 
 async function getFakeUsersFromServer() {
@@ -62,12 +62,12 @@ export async function getRecentlyJoineUsers(amount) {
   return fakeUsers.slice(0, amount);
 }
 
-export async function getRecommendedUsers(lookingFor) {
+export async function getRecommendedUsers(lookingFor, amount) {
   const fakeUsers = await getFakeUsersFromServer();
   if (lookingFor !== "Female" && lookingFor !== "Male") {
-    return fakeUsers;
+    return fakeUsers.slice(0,amount);
   }
-  return fakeUsers.filter(user => user.gender === lookingFor.toLowerCase());
+  return (fakeUsers.filter(user => user.gender === lookingFor.toLowerCase())).slice(0,amount);
 }
 
 export async function getUserByName(name) {

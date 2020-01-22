@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./style.css";
 import { useSelector } from "react-redux";
-import { UsersCards } from "./UsersCards";
+import { UsersCards } from "../UsersList/UsersCards";
 import {
   getRecentlyJoineUsers,
   getRecommendedUsers
@@ -15,7 +15,7 @@ export function HomePage() {
   useEffect(() => {
     async function fetchFakeUsers() {
       setRecentlyUsers(await getRecentlyJoineUsers(10));
-      setRecommendedUsers(await getRecommendedUsers(user.lookingFor));
+      setRecommendedUsers(await getRecommendedUsers(user.lookingFor, 20));
     }
     user && fetchFakeUsers();
   }, [user]);

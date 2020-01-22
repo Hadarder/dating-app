@@ -24,10 +24,8 @@ export function UserPage() {
     <div className="userpage">
       <div className="userContainer">
         <Pictures images={user.images} profilePic={user.profilePic} />
-        <div>
-          <h3>{`${user.firstName} ${user.lastName}`}</h3>
-          <h3 className="age">{user.age}</h3>
-        </div>
+        <h3>{`${user.firstName} ${user.lastName}`}</h3>
+        <h3>{user.age}</h3>
         <button className="like">
           {"i like " + displayHimOrHer(user.gender)}
           <span className="heart">❤</span>

@@ -4,6 +4,7 @@ import { HomePage } from "./HomPage/Homepage";
 import { LoginPage } from "./LoginPage/LoginPage";
 import { ProfilePage } from "./ProfilePage/ProfilePage";
 import { UserPage } from "./UserPage/UserPage";
+import { SearchPage } from "./SearchPage/SearchPage";
 
 export function MainView() {
   return (
@@ -19,6 +20,9 @@ export function MainView() {
       </Route>
       <Route path="/user/:name">
         <UserPage />
+      </Route>
+      <Route path="/search/:name">
+        <SearchPage />
       </Route>
     </Switch>
   );
