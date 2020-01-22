@@ -1,15 +1,14 @@
 import { getFakeUsers, setFakeUsers } from "../mockServer/mockServer";
-import Ape, { name, age, arrayOf, date } from "ape-mock";
-
-const malePic = 'https://i.pinimg.com/originals/95/49/ff/9549ff7f5600476511721eade4f4b91f.png';
-const femalePic = 'https://graphic.club/wp-content/uploads/edd/2015/11/woman-avatar-4.png';
+import Ape, { name, age, arrayOf, date, fromValues } from "ape-mock";
+import { malePics, femalePics } from "./pictures";
 
 const men = Ape({
   maleUsers: arrayOf({
     firstName: name().male(),
     lastName: name().lastName(),
     age: age().adult(),
-    image: malePic,
+    profilePic: fromValues(malePics),
+    images: malePics,
     gender: "male",
     date: date()
       .random()
@@ -22,7 +21,8 @@ const women = Ape({
     firstName: name().female(),
     lastName: name().lastName(),
     age: age().adult(),
-    image: femalePic,
+    profilePic: fromValues(femalePics),
+    images: femalePics,
     gender: "female",
     date: date()
       .random()
@@ -58,14 +58,19 @@ function compare(a, b) {
 }
 
 export async function getRecentlyJoineUsers(amount) {
-  const  fakeUsers  = await getFakeUsersFromServer();
+  const fakeUsers = await getFakeUsersFromServer();
   return fakeUsers.slice(0, amount);
 }
 
 export async function getRecommendedUsers(lookingFor) {
-  const  fakeUsers  = await getFakeUsersFromServer();
-  if (lookingFor !== 'Female' && lookingFor !== 'Male'){
+  const fakeUsers = await getFakeUsersFromServer();
+  if (lookingFor !== "Female" && lookingFor !== "Male") {
     return fakeUsers;
   }
   return fakeUsers.filter(user => user.gender === lookingFor.toLowerCase());
+}
+
+export async function getUserByName(name) {
+  const fakeUsers = await getFakeUsersFromServer();
+  return fakeUsers.find(user => user.firstName === name);
 }

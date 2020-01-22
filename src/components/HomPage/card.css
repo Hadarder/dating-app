@@ -1,16 +1,17 @@
 .pic{
-    height: 50px;
-    width: 50px;
+    height: 80px;
+    width: 80px;
 }
 
 .card{
     display: flex;
     justify-content: flex-start;
     margin-top: 10px;
+    cursor: pointer;
 }
 
 .nameandage{
     margin-left: 10px;
-    margin-top: 10px;
+    margin-top: 25px;
     font-size: small;
 }
